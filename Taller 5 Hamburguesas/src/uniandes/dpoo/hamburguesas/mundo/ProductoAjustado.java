@@ -17,12 +17,24 @@ public class ProductoAjustado implements Producto
      */
     private ArrayList<Ingrediente> agregados;
 
-    /**
+    public ArrayList<Ingrediente> getAgregados() {
+		return agregados;
+	}
+
+	/**
      * La lista de ingrediente que el usuario quiere eliminar.
      */
     private ArrayList<Ingrediente> eliminados;
 
-    /**
+    public ProductoMenu getProductoBase() {
+		return productoBase;
+	}
+
+	public ArrayList<Ingrediente> getEliminados() {
+		return eliminados;
+	}
+
+	/**
      * Construye un nuevo producto ajustado a partir del producto base y sin modificaciones
      * @param productoBase El producto base que se va a ajustar
      */
@@ -45,7 +57,12 @@ public class ProductoAjustado implements Producto
     @Override
     public int getPrecio( )
     {
-        return 0;
+        int precioTotal = productoBase.getPrecio();
+        
+        for (Ingrediente ingrediente : agregados) {
+        	precioTotal += ingrediente.getCostoAdicional();
+        }
+        return precioTotal;
     }
 
     /**
@@ -60,15 +77,16 @@ public class ProductoAjustado implements Producto
         sb.append( productoBase );
         for( Ingrediente ing : agregados )
         {
-            sb.append( "    +" + ing.getNombre( ) );
-            sb.append( "                " + ing.getCostoAdicional( ) );
+            sb.append( "Nombre ingrediente: " + ing.getNombre( ) + "\n");
+            sb.append( "Precio ingrediente adicional: " + ing.getCostoAdicional( ) + "\n");
         }
         for( Ingrediente ing : eliminados )
         {
-            sb.append( "    -" + ing.getNombre( ) );
+            sb.append( "Nombre ingrediente: " + ing.getNombre( ) + "\n");
+            sb.append( "Precio ingrediente eliminado: " + ing.getCostoAdicional( ) + "\n");
         }
 
-        sb.append( "            " + getPrecio( ) + "\n" );
+        sb.append( "Total: " + getPrecio( ) + "\n" );
 
         return sb.toString( );
     }

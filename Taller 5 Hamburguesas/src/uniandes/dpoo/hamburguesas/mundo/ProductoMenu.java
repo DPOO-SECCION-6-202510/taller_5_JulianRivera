@@ -48,7 +48,7 @@ public class ProductoMenu implements Producto
     {
         StringBuffer sb = new StringBuffer( );
         sb.append( nombre + "\n" );
-        sb.append( "            " + getPrecio( ) + "\n" );
+        sb.append( "Precio: " + getPrecio( ) + "\n" );
 
         return sb.toString( );
     }
