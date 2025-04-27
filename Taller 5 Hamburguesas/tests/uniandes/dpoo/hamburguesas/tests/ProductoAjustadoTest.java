@@ -58,17 +58,18 @@ public class ProductoAjustadoTest
         sb.append( productoAjustado.getProductoBase() );
         for( Ingrediente ing : productoAjustado.getAgregados() )
         {
-            sb.append( "Nombre ingrediente: " + ing.getNombre( ) + "\n");
+            sb.append( "Nombre ingrediente adicional: " + ing.getNombre( ) + "\n");
             sb.append( "Precio ingrediente adicional: " + ing.getCostoAdicional( ) + "\n");
         }
         for( Ingrediente ing : productoAjustado.getEliminados() )
         {
-            sb.append( "Nombre ingrediente: " + ing.getNombre( ) + "\n");
+            sb.append( "Nombre ingrediente eliminado: " + ing.getNombre( ) + "\n");
             sb.append( "Precio ingrediente eliminado: " + ing.getCostoAdicional( ) + "\n");
         }
         
         sb.append("Total: " + 25000 + "\n");
         assertEquals(sb.toString(), productoAjustado.generarTextoFactura(), "El texto de la factura no es el esperado.");
+        System.out.println();
 	}
 	
 }

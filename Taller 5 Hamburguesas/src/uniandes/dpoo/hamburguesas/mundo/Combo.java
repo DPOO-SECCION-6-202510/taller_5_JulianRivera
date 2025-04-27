@@ -28,10 +28,10 @@ public class Combo implements Producto
      * @param descuento El descuento sobre el valor normal de los productos en el combo
      * @param items Los productos que hacen parte del combo
      */
-    public Combo( String nombre, double descuento, ArrayList<ProductoMenu> items )
+    public Combo( String nombreCombo, double descuento, ArrayList<ProductoMenu> items )
     {
         this.itemsCombo = new ArrayList<>( items );
-        this.nombreCombo = nombre;
+        this.nombreCombo = nombreCombo;
         this.descuento = descuento;
     }
 
@@ -39,6 +39,7 @@ public class Combo implements Producto
     public String getNombre( )
     {
         return nombreCombo;
+        
     }
 
     /**
@@ -55,7 +56,7 @@ public class Combo implements Producto
             precio += i.getPrecio( );
         }
 
-        return ( int ) ( precio * descuento );
+        return ( int ) ( precio * (1-descuento) );
     }
 
     /**
@@ -67,9 +68,9 @@ public class Combo implements Producto
     public String generarTextoFactura( )
     {
         StringBuffer sb = new StringBuffer( );
-        sb.append( "Combo " + nombreCombo + "\n" );
-        sb.append( " Descuento: " + descuento + "\n" );
-        sb.append( "            " + getPrecio( ) + "\n" );
+        sb.append( "Combo: " + nombreCombo + "\n" );
+        sb.append( "Descuento: " + descuento + "\n" );
+        sb.append( "Precio: " + getPrecio( ) + "\n" );
 
         return sb.toString( );
     }

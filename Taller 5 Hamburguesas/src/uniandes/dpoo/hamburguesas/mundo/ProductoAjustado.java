@@ -77,12 +77,12 @@ public class ProductoAjustado implements Producto
         sb.append( productoBase );
         for( Ingrediente ing : agregados )
         {
-            sb.append( "Nombre ingrediente: " + ing.getNombre( ) + "\n");
+            sb.append( "Nombre ingrediente adicional: " + ing.getNombre( ) + "\n");
             sb.append( "Precio ingrediente adicional: " + ing.getCostoAdicional( ) + "\n");
         }
         for( Ingrediente ing : eliminados )
         {
-            sb.append( "Nombre ingrediente: " + ing.getNombre( ) + "\n");
+            sb.append( "Nombre ingrediente eliminado: " + ing.getNombre( ) + "\n");
             sb.append( "Precio ingrediente eliminado: " + ing.getCostoAdicional( ) + "\n");
         }
 
