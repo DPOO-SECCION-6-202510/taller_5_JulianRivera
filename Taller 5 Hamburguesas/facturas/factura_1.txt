@@ -1,0 +1,9 @@
+Cliente: Pepe
+Dirección: Dg. 1 # 2 - 3
+----------------
+corral
+Precio: 14000
+----------------
+Precio Neto:  14000
+IVA:          2660
+Precio Total: 16660

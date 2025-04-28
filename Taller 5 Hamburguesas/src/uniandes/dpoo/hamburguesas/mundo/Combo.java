@@ -17,7 +17,15 @@ public class Combo implements Producto
      */
     private double descuento;
 
-    /**
+    public ArrayList<ProductoMenu> getItemsCombo() {
+		return itemsCombo;
+	}
+
+	public double getDescuento() {
+		return descuento;
+	}
+
+	/**
      * El nombre del combo
      */
     private String nombreCombo;
@@ -50,13 +58,15 @@ public class Combo implements Producto
     @Override
     public int getPrecio( )
     {
-        double precio = 0;
+    	double precio = 0;
         for( Producto i : itemsCombo )
         {
             precio += i.getPrecio( );
         }
+        int desc =  (int) (precio * descuento);
+        precio -= desc;
 
-        return ( int ) ( precio * (1-descuento) );
+        return (int) precio;
     }
 
     /**

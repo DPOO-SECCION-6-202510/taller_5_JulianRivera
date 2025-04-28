@@ -1,0 +1,11 @@
+Cliente: Pepe
+Dirección: Localidad de Kennedy
+----------------
+Hamburguesa
+Precio: 10000
+Papas
+Precio: 5000
+----------------
+Precio Neto:  15000
+IVA:          2850
+Precio Total: 17850

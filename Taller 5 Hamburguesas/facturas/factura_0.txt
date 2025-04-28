@@ -1,0 +1,9 @@
+Cliente: Santiago
+Dirección: Ac. 3 #29-38.
+----------------
+corral
+Precio: 14000
+----------------
+Precio Neto:  14000
+IVA:          2660
+Precio Total: 16660

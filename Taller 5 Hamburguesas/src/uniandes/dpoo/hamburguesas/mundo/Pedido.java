@@ -18,7 +18,7 @@ public class Pedido
     /**
      * El número de pedidos que se han creado hasta el momento
      */
-    private static int numeroPedidos;
+    public static int numeroPedidos;
 
     /**
      * El número identificador de un pedido
@@ -30,7 +30,11 @@ public class Pedido
      */
     private ArrayList<Producto> productos;
 
-    /**
+    public ArrayList<Producto> getProductos() {
+		return productos;
+	}
+
+	/**
      * El nombre del cliente que hizo el pedido
      */
     private String nombreCliente;
@@ -49,7 +53,8 @@ public class Pedido
      */
     public Pedido( String nombreCliente, String direccionCliente )
     {
-        this.idPedido = numeroPedidos++;
+    	this.idPedido = numeroPedidos += 1;
+        Pedido.numeroPedidos += 1;
         this.nombreCliente = nombreCliente;
         this.direccionCliente = direccionCliente;
         productos = new ArrayList<Producto>( );
@@ -95,7 +100,7 @@ public class Pedido
      * Retorna el precio de los productos del pedido
      * @return La sumatoria de los precios de los productos
      */
-    private int getPrecioNetoPedido( )
+    public int getPrecioNetoPedido( )
     {
         int valor = 0;
         for( Producto item : productos )
@@ -109,7 +114,7 @@ public class Pedido
      * Retorna el valor del IVA del producto, que corresponde al 19% del precio neto
      * @return
      */
-    private int getPrecioIVAPedido( )
+    public int getPrecioIVAPedido( )
     {
         return ( int ) ( getPrecioNetoPedido( ) * IVA );
     }
